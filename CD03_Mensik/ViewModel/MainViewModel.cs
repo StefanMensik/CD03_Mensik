@@ -62,9 +62,9 @@ namespace CD03_Mensik.ViewModel
             }
 
             DispatcherTimer Timer = new DispatcherTimer();
-            Timer.Interval = new TimeSpan(0, 1, 0);
+            Timer.Interval = new TimeSpan(0, 0, 30);
             Timer.Tick += UpdateTime;
-            
+            Timer.Start();
 
 
 
@@ -72,8 +72,8 @@ namespace CD03_Mensik.ViewModel
 
         private void UpdateTime(object sender, EventArgs e)
         {
-            currentTime = DateTime.Now.ToLocalTime().ToShortTimeString();
-            currentDate = DateTime.Now.ToLocalTime().ToShortDateString();
+            CurrentTime = DateTime.Now.ToLocalTime().ToShortTimeString();
+            CurrentDate = DateTime.Now.ToLocalTime().ToShortDateString();
 
 
     }

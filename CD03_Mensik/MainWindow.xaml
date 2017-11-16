@@ -54,8 +54,8 @@
             </StackPanel>
 
         </Grid>
-        
-        <Label Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontSize="15">...tbd...</Label>
+
+        <Label Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontSize="15"></Label>
         <Border Grid.RowSpan="2" Grid.Column="1" Margin="5" BorderThickness="1,0,0,0" BorderBrush="LightGray">
             <Grid>
                 <Grid.RowDefinitions>
@@ -124,7 +124,10 @@
                             <Label Content="4" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" Foreground="White"/>
                             <Image Margin="5" Height="40" Source="Images/Speaker Increase - 02.png"/>
                         </StackPanel>
-                        <Label Content="12:34" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" Foreground="White"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Label VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="15" Foreground="White" Content="{Binding CurrentDate}"/>
+                            <Label VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="15" Foreground="White" Content="{Binding CurrentTime}"/>
+                        </StackPanel>
                     </StackPanel>
                 </Border>
             </Grid>

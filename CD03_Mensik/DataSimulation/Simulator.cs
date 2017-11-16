@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CD03_Mensik.DataSimulation
 {
-    class Simulator
+    public class Simulator
     {
 
         private static Random rand = new Random(5);

@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace CD03_Mensik.ViewModel
 {
-    class ItemVm : ViewModelBase
+    public class ItemVm : ViewModelBase
     {
             private ItemBase baseItem;
 

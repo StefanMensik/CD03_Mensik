@@ -21,6 +21,36 @@
                 <Label Content="Überlauf Grauwasser" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontSize="15"/>
             </StackPanel>
         </Border>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+            <DataGrid Margin="10">
+                
+            </DataGrid>
+
+            <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" >
+                <Button Content="Hinzufügen" Width="100" Margin="10"/>
+                <Button Content="Löschen" Width="100" Margin="10"/>
+            </StackPanel>
+
+            <DataGrid Grid.Row="2" Margin="10">
+
+                
+          
+            </DataGrid>
+
+            <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Content="Hinzufügen" Width="100" Margin="10"/>
+                <Button Content="Löschen" Width="100" Margin="10"/>
+            </StackPanel>
+
+        </Grid>
+        
         <Label Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontSize="15">...tbd...</Label>
         <Border Grid.RowSpan="2" Grid.Column="1" Margin="5" BorderThickness="1,0,0,0" BorderBrush="LightGray">
             <Grid>

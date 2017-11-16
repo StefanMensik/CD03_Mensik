@@ -5,6 +5,7 @@ using Shared.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Windows.Threading;
 
 namespace CD03_Mensik.ViewModel
 {
@@ -60,12 +61,22 @@ namespace CD03_Mensik.ViewModel
                 ModeSelection.Add(item);
             }
 
-
+            DispatcherTimer Timer = new DispatcherTimer();
+            Timer.Interval = new TimeSpan(0, 1, 0);
+            Timer.Tick += UpdateTime;
             
 
 
 
         }
+
+        private void UpdateTime(object sender, EventArgs e)
+        {
+            currentTime = DateTime.Now.ToLocalTime().ToShortTimeString();
+            currentDate = DateTime.Now.ToLocalTime().ToShortDateString();
+
+
+    }
 
         public void GenerateData()
         {

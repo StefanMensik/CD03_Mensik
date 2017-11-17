@@ -20,7 +20,8 @@ namespace CD03_Mensik.ViewModel
         public ObservableCollection<ItemVm> SensorList { get; set; }
         public ObservableCollection<ItemVm> ActorList { get; set; }
 
-        public ObservableCollection<string> ModeSelection { get; private set; }
+        public ObservableCollection<string> SensorModeSelection { get; private set; }
+        public ObservableCollection<string> ActorModeSelection { get; private set; }
 
         private string currentTime = DateTime.Now.ToLocalTime().ToShortTimeString();
         private string currentDate = DateTime.Now.ToLocalTime().ToShortDateString();
@@ -48,23 +49,29 @@ namespace CD03_Mensik.ViewModel
 
             ActorList = new ObservableCollection<ItemVm>();
             SensorList = new ObservableCollection<ItemVm>();
-            ModeSelection = new ObservableCollection<string>();
+            SensorModeSelection = new ObservableCollection<string>();
+            ActorModeSelection = new ObservableCollection<string>();
 
             foreach (var item in Enum.GetNames(typeof(SensorModeType)))
             {
-                ModeSelection.Add(item);
+
+                //pfusch
+                if (item == "Auto" || item == "Manual") break;
+                SensorModeSelection.Add(item);
             }
 
             foreach (var item in Enum.GetNames(typeof(ModeType)))
             {
 
-                ModeSelection.Add(item);
+                ActorModeSelection.Add(item);
             }
 
             DispatcherTimer Timer = new DispatcherTimer();
             Timer.Interval = new TimeSpan(0, 0, 30);
             Timer.Tick += UpdateTime;
             Timer.Start();
+
+            GenerateData();
 
 
 

@@ -55,8 +55,8 @@ namespace CD03_Mensik.ViewModel
             foreach (var item in Enum.GetNames(typeof(SensorModeType)))
             {
 
-                //pfusch
-                if (item == "Auto" || item == "Manual") break;
+                
+                
                 SensorModeSelection.Add(item);
             }
 
